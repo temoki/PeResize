@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="View Controller" id="vXZ-lx-hvc" customClass="PERViewController" customModule="PeResize" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421" y="1026"/>
+        </scene>
+        <!--Icon View Controller-->
+        <scene sceneID="Ust-tp-J6J">
+            <objects>
+                <viewController title="Icon View Controller" id="iJ9-lW-FJ1" customClass="PERIconViewController" customModule="PeResize" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UbN-wf-lUr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qrz-Nu-lkc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ld0-Xg-SyL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUe-nM-iVv" customClass="PERIconView" customModule="PeResize" customModuleProvider="target">
+                                <rect key="frame" x="264" y="264" width="72" height="72"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="0Pa-Bw-rTk"/>
+                                    <constraint firstAttribute="height" constant="72" id="g4C-d9-gG7"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-vp-OrT">
+                                <rect key="frame" x="16" y="20" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="m5y-Kd-qrl"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="20" width="48" height="30"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="20" width="48" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="0Zv-P4-p0o" kind="unwind" unwindAction="viewReturnActionForSegue:" id="48Y-2v-Fsb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ixJ-vp-OrT" firstAttribute="leading" secondItem="Ld0-Xg-SyL" secondAttribute="leadingMargin" id="6rq-7j-7Mu"/>
+                            <constraint firstAttribute="centerX" secondItem="qUe-nM-iVv" secondAttribute="centerX" id="DWB-rc-GmE"/>
+                            <constraint firstAttribute="centerY" secondItem="qUe-nM-iVv" secondAttribute="centerY" id="SWC-Le-4xt"/>
+                            <constraint firstItem="ixJ-vp-OrT" firstAttribute="top" secondItem="UbN-wf-lUr" secondAttribute="bottom" id="k30-Pm-N5i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="ixJ-vp-OrT" id="LQ1-ZA-PfO"/>
+                        <outlet property="iconView" destination="qUe-nM-iVv" id="7bw-Qn-AtW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lSw-iP-GsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0Zv-P4-p0o" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1266" y="1026"/>
+        </scene>
+    </scenes>
+</document>
