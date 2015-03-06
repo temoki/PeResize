@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1413AB1E1AA8975C000EE7B1 /* icon-forDefault@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1413AB1C1AA8975C000EE7B1 /* icon-forDefault@2x.png */; };
 		1413AB1F1AA8975C000EE7B1 /* icon-forDefault@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1413AB1D1AA8975C000EE7B1 /* icon-forDefault@3x.png */; };
+		1480CFB51AA9EF3800F6B051 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1480CFB41AA9EF3800F6B051 /* PhotosUI.framework */; };
+		1480CFB71AA9EF3800F6B051 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1480CFB61AA9EF3800F6B051 /* Photos.framework */; };
+		1480CFBC1AA9EF3800F6B051 /* PERPhotoEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1480CFBB1AA9EF3800F6B051 /* PERPhotoEditingViewController.swift */; };
+		1480CFBE1AA9EF3800F6B051 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1480CFBD1AA9EF3800F6B051 /* MainInterface.storyboard */; };
+		1480CFC11AA9EF3800F6B051 /* PeResizeExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1480CFB21AA9EF3800F6B051 /* PeResizeExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		14B3451E1A907D560025F307 /* PERAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3451D1A907D560025F307 /* PERAppDelegate.swift */; };
 		14B345231A907D560025F307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B345211A907D560025F307 /* Main.storyboard */; };
 		14B345251A907D560025F307 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14B345241A907D560025F307 /* Images.xcassets */; };
@@ -20,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1480CFBF1AA9EF3800F6B051 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14B345101A907D560025F307 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1480CFB11AA9EF3800F6B051;
+			remoteInfo = PeResizeExt;
+		};
 		14B3452E1A907D560025F307 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 14B345101A907D560025F307 /* Project object */;
@@ -29,9 +41,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1480CFC51AA9EF3800F6B051 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1480CFC11AA9EF3800F6B051 /* PeResizeExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1413AB1C1AA8975C000EE7B1 /* icon-forDefault@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-forDefault@2x.png"; sourceTree = "<group>"; };
 		1413AB1D1AA8975C000EE7B1 /* icon-forDefault@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-forDefault@3x.png"; sourceTree = "<group>"; };
+		1480CFB21AA9EF3800F6B051 /* PeResizeExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PeResizeExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1480CFB41AA9EF3800F6B051 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		1480CFB61AA9EF3800F6B051 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		1480CFBA1AA9EF3800F6B051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1480CFBB1AA9EF3800F6B051 /* PERPhotoEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PERPhotoEditingViewController.swift; sourceTree = "<group>"; };
+		1480CFBD1AA9EF3800F6B051 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		14B345181A907D560025F307 /* PeResize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeResize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B3451C1A907D560025F307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14B3451D1A907D560025F307 /* PERAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PERAppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +79,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1480CFAF1AA9EF3800F6B051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1480CFB51AA9EF3800F6B051 /* PhotosUI.framework in Frameworks */,
+				1480CFB71AA9EF3800F6B051 /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14B345151A907D560025F307 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,11 +114,40 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1480CFB31AA9EF3800F6B051 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1480CFB41AA9EF3800F6B051 /* PhotosUI.framework */,
+				1480CFB61AA9EF3800F6B051 /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1480CFB81AA9EF3800F6B051 /* PeResizeExt */ = {
+			isa = PBXGroup;
+			children = (
+				1480CFBB1AA9EF3800F6B051 /* PERPhotoEditingViewController.swift */,
+				1480CFBD1AA9EF3800F6B051 /* MainInterface.storyboard */,
+				1480CFB91AA9EF3800F6B051 /* Supporting Files */,
+			);
+			path = PeResizeExt;
+			sourceTree = SOURCE_ROOT;
+		};
+		1480CFB91AA9EF3800F6B051 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1480CFBA1AA9EF3800F6B051 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		14B3450F1A907D560025F307 = {
 			isa = PBXGroup;
 			children = (
 				14B3451A1A907D560025F307 /* PeResize */,
+				1480CFB81AA9EF3800F6B051 /* PeResizeExt */,
 				14B345301A907D560025F307 /* PeResizeTests */,
+				1480CFB31AA9EF3800F6B051 /* Frameworks */,
 				14B345191A907D560025F307 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +157,7 @@
 			children = (
 				14B345181A907D560025F307 /* PeResize.app */,
 				14B3452D1A907D560025F307 /* PeResizeTests.xctest */,
+				1480CFB21AA9EF3800F6B051 /* PeResizeExt.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +206,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1480CFB11AA9EF3800F6B051 /* PeResizeExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1480CFC41AA9EF3800F6B051 /* Build configuration list for PBXNativeTarget "PeResizeExt" */;
+			buildPhases = (
+				1480CFAE1AA9EF3800F6B051 /* Sources */,
+				1480CFAF1AA9EF3800F6B051 /* Frameworks */,
+				1480CFB01AA9EF3800F6B051 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PeResizeExt;
+			productName = PeResizeExt;
+			productReference = 1480CFB21AA9EF3800F6B051 /* PeResizeExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		14B345171A907D560025F307 /* PeResize */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14B345371A907D560025F307 /* Build configuration list for PBXNativeTarget "PeResize" */;
@@ -142,10 +230,12 @@
 				14B345141A907D560025F307 /* Sources */,
 				14B345151A907D560025F307 /* Frameworks */,
 				14B345161A907D560025F307 /* Resources */,
+				1480CFC51AA9EF3800F6B051 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1480CFC01AA9EF3800F6B051 /* PBXTargetDependency */,
 			);
 			name = PeResize;
 			productName = PeResize;
@@ -179,6 +269,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = temoki;
 				TargetAttributes = {
+					1480CFB11AA9EF3800F6B051 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					14B345171A907D560025F307 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -203,11 +296,20 @@
 			targets = (
 				14B345171A907D560025F307 /* PeResize */,
 				14B3452C1A907D560025F307 /* PeResizeTests */,
+				1480CFB11AA9EF3800F6B051 /* PeResizeExt */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1480CFB01AA9EF3800F6B051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1480CFBE1AA9EF3800F6B051 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14B345161A907D560025F307 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,6 +332,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1480CFAE1AA9EF3800F6B051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1480CFBC1AA9EF3800F6B051 /* PERPhotoEditingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14B345141A907D560025F307 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +362,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1480CFC01AA9EF3800F6B051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1480CFB11AA9EF3800F6B051 /* PeResizeExt */;
+			targetProxy = 1480CFBF1AA9EF3800F6B051 /* PBXContainerItemProxy */;
+		};
 		14B3452F1A907D560025F307 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 14B345171A907D560025F307 /* PeResize */;
@@ -279,6 +394,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1480CFC21AA9EF3800F6B051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PeResizeExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1480CFC31AA9EF3800F6B051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PeResizeExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		14B345351A907D560025F307 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -360,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PeResize/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -371,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PeResize/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -415,6 +556,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1480CFC41AA9EF3800F6B051 /* Build configuration list for PBXNativeTarget "PeResizeExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1480CFC21AA9EF3800F6B051 /* Debug */,
+				1480CFC31AA9EF3800F6B051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		14B345131A907D560025F307 /* Build configuration list for PBXProject "PeResize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
