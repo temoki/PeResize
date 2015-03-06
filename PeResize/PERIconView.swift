@@ -72,12 +72,12 @@ class PERIconView: UIView {
         drawRect.origin.y += length * ((1.0 - PARAM_X) * 0.5)
         drawRect.size.width = length * PARAM_X
         drawRect.size.height = drawRect.size.width * heightRatio
-    
+        
         // loop
         var margin = drawRect.origin.y - rect.origin.y
         NSLog("top margin    = \(margin)")
         for (var i = 0; i < 8; i++) {
-            CGContextSetRGBFillColor(context, R[i], G[i], B[i], 0.8)
+            CGContextSetRGBFillColor(context, R[i], G[i], B[i], 1.0)
             margin = CGRectGetMaxY(rect) - CGRectGetMaxY(drawRect)
             drawRoundedRect(context, rect: drawRect, radius: radius, mode: kCGPathFill)
             drawRect.origin.x += radius * CIRCLE_RATIO
