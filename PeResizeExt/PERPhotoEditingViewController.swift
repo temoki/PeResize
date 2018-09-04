@@ -20,18 +20,21 @@ class PERPhotoEditingViewController: UIViewController, PHContentEditingControlle
     @IBOutlet var upButton: UIButton?
     @IBOutlet var downButton: UIButton?
 
-    let scaleValueArray: [Float] = [1/1, 1/2, 1/4, 1/8, 1/16];
+    let scaleValueArray: [CGFloat] = [1/1, 1/2, 1/4, 1/8, 1/16];
     let scaleStringArray: [String] = ["1 / 1", "1 / 2", "1 / 4", "1 / 8", "1 / 16"];
     var scaleArrayIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView?.setTranslatesAutoresizingMaskIntoConstraints(true)
+        imageView?.frame = view.frame
         bottomBar?.backgroundColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 1)
         scaleArrayIndex = 0
         self.scaleLabel?.text = scaleStringArray[scaleArrayIndex]
         self.upButton?.enabled = false
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -42,6 +45,17 @@ class PERPhotoEditingViewController: UIViewController, PHContentEditingControlle
             scaleLabel?.text = scaleStringArray[scaleArrayIndex]
             upButton?.enabled = scaleArrayIndex == 0 ? false : true
             downButton?.enabled = true
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                let scale = self.scaleValueArray[self.scaleArrayIndex]
+                var frame = self.view!.frame
+                NSLog("Before = \(NSStringFromCGRect(frame))")
+                frame.size.width = frame.size.width * scale
+                frame.size.height = frame.size.height * scale
+                self.imageView?.frame = frame
+                self.imageView?.center = self.view!.center
+            }, completion: { (Bool) -> Void in
+                NSLog("After = \(NSStringFromCGRect(self.imageView!.frame))")
+            })
         }
     }
 
@@ -51,6 +65,17 @@ class PERPhotoEditingViewController: UIViewController, PHContentEditingControlle
             scaleLabel?.text = scaleStringArray[scaleArrayIndex]
             downButton?.enabled = scaleArrayIndex == (scaleStringArray.count - 1) ? false : true
             upButton?.enabled = true
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                let scale = self.scaleValueArray[self.scaleArrayIndex]
+                var frame = self.view!.frame
+                NSLog("Before = \(NSStringFromCGRect(frame))")
+                frame.size.width = frame.size.width * scale
+                frame.size.height = frame.size.height * scale
+                self.imageView?.frame = frame
+                self.imageView?.center = self.view!.center
+                }, completion: { (Bool) -> Void in
+                    NSLog("After = \(NSStringFromCGRect(self.imageView!.frame))")
+            })
         }
     }
 
@@ -59,7 +84,7 @@ class PERPhotoEditingViewController: UIViewController, PHContentEditingControlle
     func canHandleAdjustmentData(adjustmentData: PHAdjustmentData?) -> Bool {
         // Inspect the adjustmentData to determine whether your extension can work with past edits.
         // (Typically, you use its formatIdentifier and formatVersion properties to do this.)
-        return false
+        return scaleArrayIndex == 0 ? false : true
     }
 
     func startContentEditingWithInput(contentEditingInput: PHContentEditingInput?, placeholderImage: UIImage) {
@@ -67,7 +92,7 @@ class PERPhotoEditingViewController: UIViewController, PHContentEditingControlle
         // If you returned YES from canHandleAdjustmentData:, contentEditingInput has the original image and adjustment data.
         // If you returned NO, the contentEditingInput has past edits "baked in".
         input = contentEditingInput
-        self.imageView?.image = input?.displaySizeImage
+        imageView?.image = input?.displaySizeImage
     }
 
     func finishContentEditingWithCompletionHandler(completionHandler: ((PHContentEditingOutput!) -> Void)!) {
@@ -93,7 +118,7 @@ class PERPhotoEditingViewController: UIViewController, PHContentEditingControlle
     var shouldShowCancelConfirmation: Bool {
         // Determines whether a confirmation to discard changes should be shown to the user on cancel.
         // (Typically, this should be "true" if there are any unsaved changes.)
-        return false
+        return scaleArrayIndex == 0 ? false : true
     }
 
     func cancelContentEditing() {
